@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<head>
+	<meta charset="UTF-8"/>
+	<title> Update Student </title>
+	<meta name="description" content="This page is for updating student details"/>
+</head>
+	<body>
+	<h1> Add a Student </h1>
+	<form action="/student/{{ Data.student_id }}/update" method="POST" id="update-form">
+		<div>
+		<label>Roll Number:</label>
+		<input type="text" name="roll" value= "{{ Data.roll_number }}" disabled />
+		</div>
+		<br>
+		<div>
+		<label>First Name:</label>
+		<input type="text" name="f_name" value = "{{ Data.first_name }}" required />
+		</div>
+		<br>
+		<div>
+		<label>Last Name:</label>
+		<input type="text" name="l_name" value = "{{ Data.last_name }}" />
+		</div>
+		<br>
+		<div>
+		<label>Select Courses: </label>
+		<input type="checkbox" name="courses" value="course_1" />
+		<label>MAD I</label>
+		<input type="checkbox" name="courses" value="course_2" />
+		<label>DBMS</label>
+		<input type="checkbox" name="courses" value="course_3" />
+		<label>PDSA</label>
+		<input type="checkbox" name="courses" value="course_4" />
+		<label>BDM</label>
+		</div>
+		<br>
+		<div>
+		<input type="submit" value = "Submit">
+		</div>
+		</form>
+	</body>
+</html>

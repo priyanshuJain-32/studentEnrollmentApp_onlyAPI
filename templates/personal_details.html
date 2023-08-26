@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+	<head>
+	<meta charset="UTF-8"/>
+	<title> Personal Details </title>
+	<link rel="icon" type="image/x-icon" href="{{url_for('static', filename='graph.png')}}">
+	<meta name="description" content="This page lists student details"/>
+</head>
+	<body>
+<h1> Students list </h1>
+	<table id = "personal-details">
+		<tr>
+		<th>Roll Number</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		</tr>
+		<tr>
+		<td>{{ data1['roll_number'] }}</td>
+		<td>{{ data1['first_name'] }}</td>
+		<td>{{ data1['last_name'] }}</td>
+		</tr>
+	</table>
+<h1> Enrollments list </h1>
+	<table id = "enroll-table">
+		<tr>
+		<th>S. No.</th>
+		<th>Course Code</th>
+		<th>Course Name</th>
+		<th>Course Description</th>
+		</tr>
+		{% for data in data2 %}
+		<tr>
+		<td>{{ data['course_id'] }}</td>
+		<td>{{ data['course_code'] }}</td>
+		<td>{{ data['course_name'] }}</td>
+		<td>{{ data['course_description'] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+	<form action="/" method="GET">
+	<br>
+	<div class="align-right">
+	<button type="Go Home">Go Home</button>
+	</div>
+	<br>
+	
+	</form>
+</body>
+</html>
